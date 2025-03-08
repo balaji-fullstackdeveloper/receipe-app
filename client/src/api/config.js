@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_BASE_URL = "http://localhost:5001/api";
+export const API_BASE_URL = "https://receipe-app-pcvs.onrender.com/api";
 
 // Auth endpoints
 export const AUTH_ENDPOINTS = {
