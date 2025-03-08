@@ -36,7 +36,7 @@ function RecipeDetail() {
     if (window.confirm("Are you sure you want to delete this recipe?")) {
       try {
         setDeleting(true);
-        await axios.delete(`http://localhost:5001/api/recipes/${id}`);
+        await axios.delete(`https://receipe-app-pcvs.onrender.com/api/recipes/${id}`);
         toast.success("Recipe deleted successfully");
         setTimeout(() => {
           navigate("/");
