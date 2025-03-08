@@ -17,7 +17,7 @@ const __dirname = dirname(__filename);
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
@@ -27,7 +27,7 @@ app.use(cookieParser());
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log("Connected to MongoDB ", process.env.MONGODB_URI);
   })
   .catch((error) => console.error("MongoDB connection error:", error));
 

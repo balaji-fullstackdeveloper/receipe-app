@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: recipe-app-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5001
+      - key: FRONTEND_URL
+        value: https://recipe-app-frontend.onrender.com # Update this with your frontend URL after deploying frontend
+      - key: MONGODB_URI
+        sync: false # This will be set in Render dashboard
+      - key: JWT_SECRET
+        sync: false # This will be set in Render dashboard
+      - key: JWT_EXPIRES_IN
+        value: 24h
+      - key: API_PREFIX
+        value: /api
