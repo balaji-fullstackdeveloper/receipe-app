@@ -24,7 +24,7 @@ function RecipeList() {
   const fetchRecipes = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5001/api/recipes");
+      const response = await axios.get("https://receipe-app-pcvs.onrender.com/api/recipes");
       setRecipes(response.data);
     } catch (error) {
       console.error("Error fetching recipes:", error);
