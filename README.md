@@ -71,8 +71,8 @@ npm run dev
 
 The application will be available at:
 
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000
+- Frontend: https://receipe-app-client.onrender.com
+- Backend API: https://receipe-app-pcvs.onrender.com
 
 ## API Endpoints
 
