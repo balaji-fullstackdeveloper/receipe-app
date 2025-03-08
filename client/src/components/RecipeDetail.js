@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "./Loading";
@@ -36,14 +35,14 @@ function RecipeDetail() {
     if (window.confirm("Are you sure you want to delete this recipe?")) {
       try {
         setDeleting(true);
-        await axios.delete(`https://receipe-app-pcvs.onrender.com/api/recipes/${id}`);
+        await recipeAPI.deleteRecipe(id);
         toast.success("Recipe deleted successfully");
         setTimeout(() => {
           navigate("/");
         }, 2000);
       } catch (error) {
         console.error("Error deleting recipe:", error);
-        toast.error("Error deleting recipe");
+        toast.error(error.response?.data?.message || "Error deleting recipe");
       } finally {
         setDeleting(false);
       }
